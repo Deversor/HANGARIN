@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!=e+we@bw#$jac&y1-nc8+azsbsedh^-i9hq!7c@%oy@)t0)eg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['obeddebelennn.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -40,6 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "taskmanager",
     "widget_tweaks",
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
+]
+
+SITE_ID = 2
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'projectsite.urls'
@@ -120,3 +134,18 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/accounts/login/' 
+LOGIN_REDIRECT_URL = '/' 
+LOGOUT_REDIRECT_URL = '/accounts/login/' 
+ACCOUNT_LOGOUT_REDIRECT_URL = '/' 
+ACCOUNT_LOGOUT_ON_GET = True 
+ACCOUNT_LOGIN_METHODS = {"username", "email"} 
+ACCOUNT_SIGNUP_FIELDS = [
+    "username*",
+    "email*",
+    "password1*",
+    "password2*",
+]
