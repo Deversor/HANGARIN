@@ -1,4 +1,5 @@
 {% load static %}
+{% load pwa %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,7 @@
         .btn-primary, .bg-primary, .notif-primary { background-color: #17a2b8 !important; border-color: #17a2b8 !important; }
         .text-primary { color: #17a2b8 !important; }
     </style>
+    {% progressive_web_app_meta %}
 </head>
 <body>
     <div class="wrapper">
@@ -92,7 +94,7 @@
                                         </a>
                                         <a href="#">
                                             <div class="notif-img"> 
-                                                <img src="assets/img/profile2.jpg" alt="Img Profile">
+                                                <img src="static/img/profile2.jpg" alt="Img Profile">
                                             </div>
                                             <div class="notif-content">
                                                 <span class="block">
@@ -146,7 +148,7 @@
                 <div class="scrollbar-inner sidebar-wrapper">
                     <div class="user">
                         <div class="photo">
-                            <img src="assets/img/profile.jpg">
+                            <img src="static/img/profile.jpg">
                         </div>
                         <div class="info">
                             <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -228,61 +230,7 @@
                 {% block content %}
                 {% endblock %}
                                         
-                                    </div>
-                                    <div class="card-body">
-                                        
-                                        <table class="table table-typo">
-                                            <tbody>
-                                                <tr>
-                                                    <td><p>Header 1</p></td>
-                                                    <td><span class="h1">h1. Bootstrap heading</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><p>Paragraph</p></td>
-                                                    <td><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><p>Primary Text</p></td>
-                                                    <td><p class="text-primary">Theme color applied here...</p></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="card-footer">
-                                        <hr>
-                                        Card Footer
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="pull-left">
-                            <ul class="nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="http://www.themekita.com">
-                                        ThemeKita
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        Help
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://themewagon.com/license/#free-item">
-                                        Licenses
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="copyright ml-auto">
-                            2026, made with <i class="la la-heart heart text-danger"></i> for <b>Hangarin</b>
-                        </div>               
-                    </div>
-                </footer>
+                                    
             </div>
         </div>
     </div>
